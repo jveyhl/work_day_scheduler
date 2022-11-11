@@ -17,7 +17,11 @@ textarea {
 }
 
 .time-block {
+  /* Use flexbox to align all items in the time-block */
+  display:flex;
   border-radius: 15px;
+  /* Add some space between time-blocks */
+  margin-bottom: 5px;
 }
 
 .row {
@@ -46,6 +50,8 @@ textarea {
 }
 
 .saveBtn {
+  /* Set display to flexbox to align the icon to the center */
+  display: flex;
   border-left: 1px solid black;
   border-top-right-radius: 15px;
   border-bottom-right-radius: 15px;
