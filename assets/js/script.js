@@ -42,7 +42,7 @@ $(document).ready(() => {
       let blockSave = $("<div>").addClass("btn saveBtn col-2 col-md-1");
       
       // Make an icon for the save button
-      let icon = $("<button>").addClass("fas fa-save").attr("id", i).attr("title", "Save");
+      let icon = $("<button>").addClass("btn fas fa-save fa-lg").attr("id", i).attr("title", "Save");
 
       // Append child elements to parent container
       $(".container").append(block.append(blockHour, blockText, blockSave.append(icon)));
