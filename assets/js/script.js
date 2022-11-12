@@ -12,7 +12,7 @@ $(document).ready(() => {
   }, 1000);
 
   // Add rows to the schedule
-  const addBlocks = (date) => {
+  const addBlocks = () => {
     // Default time is 8:00 AM
     let hour = 8;
 
@@ -66,10 +66,13 @@ $(document).ready(() => {
   // In index.html
   let clearBtn = $("#clearbtn");
 
-
+  // Test if save buttons work
+  const myfunc = () => {
+    console.log("clicked")
+  }
 
   // Click on the save button to save the task to localStorage
-  clearBtn.click(console.log("test"))
+  saveBtn.click(myfunc);
 });
 
 
