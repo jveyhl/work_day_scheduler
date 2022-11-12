@@ -70,7 +70,6 @@ $(document).ready(() => {
     event.preventDefault();
     console.log(this);
     console.log(event);
-    //localStorage.setItem($(this)[0].previousElementSibling.id, $(this)[0].previousElementSibling.value);
   }
 });
 
