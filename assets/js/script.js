@@ -62,7 +62,7 @@ $(document).ready(() => {
   }
 
   // Initialize the page
-  $(window).on("load", addBlocks);
+  addBlocks();
 
   // Populate time-block text areas with saved tasks from localStorage
   getTask();
@@ -83,14 +83,23 @@ $(document).ready(() => {
     for (let i = 0; i < 12; i++) {
       // Tasks have keys ranging from 0 to 11
       let savedTask = localStorage.getItem(`${i}`);
-      console.log(savedTask, typeof saveTask)
       // Get reference to blockText in each time-block
       // Set text to the task retrieved from localStorage
       $("#text" + i).val(savedTask);
     }
   }
 
-  // test commment for push
+  // Get reference to clear button
+  clearBtn = $("#clearbtn");
+  // Get reference to all <textarea> elements
+  textBox = $(".text-box");
+
+  // Clear the schedule and text-boxes
+  clearBtn.on("click", () => {
+    localStorage.clear();
+    textBox.empty();
+    location.reload();
+  })
 
 });
 
