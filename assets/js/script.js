@@ -24,8 +24,8 @@ $(document).ready(() => {
       let blockHour = $("<div>").addClass("col-2 col-md-1 hour text-center py-4");
 
       // Update the time and apply format
-      // Give the div and id equal to 'i' in the current itteration of the loop
-      blockHour.text(dayjs().set("hour", hour).set("minute", 0).format("h A")).attr("id", `hour${i}`);
+      // Give the div an hour id equal appended with 'i' in the current itteration of the loop
+      blockHour.text(dayjs().set("hour", hour).format("h A")).attr("id", `hour${i}`);
 
       // Make an area of the time-block for holding text
       let blockText = $("<textarea>").addClass("col-8 col-md-10 description text-box").attr("id", `text${i}`);
@@ -42,7 +42,7 @@ $(document).ready(() => {
       }
 
       // Make an area of the time-block for holding the save button 
-      let blockSave = $("<div>").addClass("btn saveBtn col-2 col-md-1");
+      let blockSave = $("<div>").addClass("saveBtn col-2 col-md-1");
 
       // Make an icon for the save button
       let icon = $("<button>").addClass("btn fas fa-save fa-lg").attr("id", i).attr("title", "Save");
