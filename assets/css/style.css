@@ -59,7 +59,7 @@ header {
 .saveBtn {
   /* Set display to flexbox */
   display: flex;
-  /* Align the icon to the center  */
+  /* Align the icon to the center */
   justify-content: center;
   border-left: 1px solid black;
   border-top-right-radius: 15px;
