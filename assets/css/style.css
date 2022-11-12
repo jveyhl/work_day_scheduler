@@ -12,6 +12,13 @@ textarea {
   padding: 10px;
 }
 
+/* Use flexbox to align text */
+header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
 .description {
   white-space: pre-wrap;
 }
@@ -36,22 +43,24 @@ textarea {
 
 .past {
   background-color: #d3d3d3;
-  color: white;
+  color: black;
 }
 
 .present {
   background-color: #ff6961;
-  color: white;
+  color: black;
 }
 
 .future {
   background-color: #77dd77;
-  color: white;
+  color: black;
 }
 
 .saveBtn {
-  /* Set display to flexbox to align the icon to the center */
+  /* Set display to flexbox */
   display: flex;
+  /* Align the icon to the center  */
+  justify-content: center;
   border-left: 1px solid black;
   border-top-right-radius: 15px;
   border-bottom-right-radius: 15px;
@@ -62,4 +71,17 @@ textarea {
 .saveBtn i:hover {
   font-size: 20px;
   transition: all 0.3s ease-in-out;
+}
+
+#btn-container {
+  /* Make button container flexbox and align the button to the center */
+  display: flex;
+  justify-content: center;
+  /* Add space above/below container */
+  margin-top: 5px;
+  margin-bottom: 10px;
+}
+
+#clearbtn {
+  background-color: orange;
 }
