@@ -11,10 +11,8 @@ $(document).ready(() => {
 
   }, 1000);
 
-  // Test if save buttons work change all functions to function name() {...} style
-  const myfunc = () => {
-    console.log("clicked")
-  }
+  // Declare variables for elements to be accessed outside of addBlocks
+  var icon;
 
   // Add rows to the schedule
   function addBlocks() {
@@ -50,7 +48,7 @@ $(document).ready(() => {
       const blockSave = $("<div>").addClass("btn saveBtn col-2 col-md-1");
 
       // Make an icon for the save button
-      let icon = $("<button>").addClass("btn icon fas fa-save fa-lg").attr("id", i).attr("title", "Save");
+      icon = $("<button>").addClass("btn icon fas fa-save fa-lg").attr("id", i).attr("title", "Save");
 
       // Append child elements to parent container
       $(".container").append(block.append(blockHour, blockText, blockSave.append(icon)));
@@ -70,19 +68,10 @@ $(document).ready(() => {
   function saveTask(event) {
     console.log("save button clicked");
     event.preventDefault();
+    console.log(this);
+    console.log(event);
     //localStorage.setItem($(this)[0].previousElementSibling.id, $(this)[0].previousElementSibling.value);
   }
-
-  // Retrieve scheduled tasks from localStorage
-  function getTask() {
-    for (let i = 0; i < 12; i++) {
-      let savedTask = localStorage.getItem("text" + i);
-
-      // Get reference to blockText in each time-block
-      $("#test" + i).text(saveTask);
-    }
-  }
-
 });
 
 
