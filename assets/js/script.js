@@ -86,9 +86,11 @@ $(document).ready(() => {
       console.log(savedTask, typeof saveTask)
       // Get reference to blockText in each time-block
       // Set text to the task retrieved from localStorage
-      $("#text" + i).val(`test${i}`);
+      $("#text" + i).val(savedTask);
     }
   }
+
+  // test commment for push
 
 });
 
