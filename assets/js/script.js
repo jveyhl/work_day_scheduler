@@ -72,7 +72,10 @@ $(document).ready(() => {
   }
 
   // Click on the save button to save the task to localStorage
+  // Testing references: only clearBtn works...
   saveBtn.click(myfunc);
+  clearBtn.click(myfunc);
+  textBox.val("test");
 });
 
 
