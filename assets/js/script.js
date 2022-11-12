@@ -2,11 +2,14 @@
 // the code isn't run until the browser has finished rendering all the elements
 // in the html.
 $(document).ready(() => {
-  // Get current date
-  const now = dayjs().format("DD MMMM YYYY h:mm A");
+  // Get current date and time use set interval to refresh time
+  setInterval(() => {
+    let now = dayjs().format("DD MMMM YYYY h:mm A");
 
-  // Get reference to currentDay element to display time
-  $("#currentDay").text(now);
+    // Get reference to currentDay element to display time
+    $("#currentDay").text(now);
+
+  }, 1000);
 
   // Add rows to the schedule
   const addBlocks = (date) => {
@@ -18,7 +21,7 @@ $(document).ready(() => {
       let block = $("<div>").addClass("time-block").attr("id", `block${i}`);
 
       // Make an area of the time-block for holding the time
-      let blockHour = $("<div>").addClass("col-2 col-md-1 hour text-center py-3");
+      let blockHour = $("<div>").addClass("col-2 col-md-1 hour text-center py-4");
 
       // Update the time and apply format
       // Give the div and id equal to 'i' in the current itteration of the loop
@@ -40,7 +43,7 @@ $(document).ready(() => {
 
       // Make an area of the time-block for holding the save button 
       let blockSave = $("<div>").addClass("btn saveBtn col-2 col-md-1");
-      
+
       // Make an icon for the save button
       let icon = $("<button>").addClass("btn fas fa-save fa-lg").attr("id", i).attr("title", "Save");
 
