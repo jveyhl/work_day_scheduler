@@ -29,8 +29,8 @@ $(document).ready(() => {
       const blockHour = $("<div>").addClass("col-2 col-md-1 hour text-center py-4");
 
       // Update the time and apply format
-      // Give the div and id equal to 'i' in the current itteration of the loop
-      blockHour.text(dayjs().set("hour", hour).set("minute", 0).format("h A")).attr("id", `hour${i}`);
+      // Give the div an hour id equal appended with 'i' in the current itteration of the loop
+      blockHour.text(dayjs().set("hour", hour).format("h A")).attr("id", `hour${i}`);
 
       // Make an area of the time-block for holding text
       const blockText = $("<textarea>").addClass("col-8 col-md-10 description text-box").attr("id", `text${i}`);
