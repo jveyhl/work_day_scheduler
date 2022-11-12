@@ -56,7 +56,7 @@ $(document).ready(() => {
       // Add one hour to the hour variable to increase the time for the next time-block
       hour += 1;
 
-      // Add listener to icon that will save task when icon is clicked
+      // Add listener to icon that will save the task when the icon is clicked
       icon.on("click", saveTask);
     }
   }
@@ -66,11 +66,15 @@ $(document).ready(() => {
 
   // Store scheduled tasks to localStorage
   function saveTask(event) {
-    console.log("save button clicked");
     event.preventDefault();
-    console.log(this);
-    console.log(event);
+    // Get the id of the save button that was clicked
+    let textKey = this.id;
+    // Use the save button id to find the text stored in the same time-block as the save button
+    let textVal = $(`#text${textKey}`).val()
+    // Store the text/task in localStorage
+    localStorage.setItem(textKey, textVal);
   }
+
 });
 
 
