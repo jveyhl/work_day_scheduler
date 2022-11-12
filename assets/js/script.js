@@ -12,7 +12,7 @@ $(document).ready(() => {
   }, 1000);
 
   // Declare variables for elements to be accessed outside of addBlocks
-  var icon;
+  //var icon;
 
   // Add rows to the schedule
   function addBlocks() {
@@ -64,6 +64,9 @@ $(document).ready(() => {
   // Initialize the page
   $(window).on("load", addBlocks);
 
+  // Populate time-block text areas with saved tasks from localStorage
+  getTask();
+
   // Store scheduled tasks to localStorage
   function saveTask(event) {
     event.preventDefault();
@@ -73,6 +76,18 @@ $(document).ready(() => {
     let textVal = $(`#text${textKey}`).val()
     // Store the text/task in localStorage
     localStorage.setItem(textKey, textVal);
+  }
+
+  // Retrieve scheduled tasks from localStorage
+  function getTask() {
+    for (let i = 0; i < 12; i++) {
+      // Tasks have keys ranging from 0 to 11
+      let savedTask = localStorage.getItem(`${i}`);
+      console.log(savedTask, typeof saveTask)
+      // Get reference to blockText in each time-block
+      // Set text to the task retrieved from localStorage
+      $("#text" + i).val(`test${i}`);
+    }
   }
 
 });
