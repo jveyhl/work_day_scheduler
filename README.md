@@ -1,4 +1,4 @@
-# Web APIs Challenge: Code Quiz
+# Third-Party APIs Challenge: Work Day Scheduler
 
 ## Description
 
